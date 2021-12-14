@@ -1,0 +1,85 @@
+#footerBody {
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  height: 300px;
+  background-color: black;
+}
+
+#fhead {
+  position: absolute;
+  width: 100%;
+  height: 80px;
+  background-color: white;
+  border-style: solid;
+  border-width: 2px;
+  border-color: #bfbfbf;
+}
+#temukan {
+  position: absolute;
+  right: 14%;
+  top: 38%;
+  width: 200px;
+  height: 40px;
+}
+#medsos {
+  position: absolute;
+  top: 15px;
+  right: 5%;
+  width: 200px;
+  height: 50px;
+}
+img {
+  position: relative;
+  height: 100%;
+  width: auto;
+}
+
+#fcontent {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  top: 84px;
+  background-color: white;
+}
+
+.gogo {
+  position: absolute;
+  width: 300px;
+  height: 100%;
+}
+
+#go2 {
+  left: 300px;
+}
+#go3 {
+  left: 600px;
+}
+
+.titlego {
+  position: relative;
+  font-family: "oswald-medium";
+  left: 30%;
+  top: 10px;
+  width: 100%;
+  height: 40px;
+  opacity: 50%;
+}
+.contmenugo {
+  position: relative;
+  left: 30%;
+  top: 10px;
+  width: 100%;
+  height: 200px;
+}
+.menugo {
+  position: relative;
+  font-family: "Calibri";
+  top: 10px;
+  width: 100%;
+  height: 30px;
+  font-size: 15px;
+}
+.menugo:hover {
+  color: blue;
+}

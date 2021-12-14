@@ -1,55 +1,59 @@
+{{define "homepage"}}
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8">
-		<title>GoGoRosir</title>
-		<link rel="stylesheet" href="/public/css/headers.css">
-	</head>
-	<body>
-		<div class="headers"></div>
-		<div class="slide">
-			<img class="mySlides" src="/public/media/images/images1.jpg">
-			<img class="mySlides" src="/public/media/images/images2.jpg">
-			<img class="mySlides" src="/public/media/images/images3.jpg">
-			<img class="mySlides" src="web.jpg">
+  <head>
+    <meta charset="utf-8" />
+    <title>GoGoRosir</title>
+    <link rel="stylesheet" href="/public/css/headers.css" />
+  </head>
+  <body>
+    {{template "_header"}}
+    <div class="slide">
+      <img class="mySlides" src="/public/media/images/images1.jpg" />
+      <img class="mySlides" src="/public/media/images/images2.jpg" />
+      <img class="mySlides" src="/public/media/images/images3.jpg" />
+      <img class="mySlides" src="web.jpg" />
 
-			<button class="but-left" onclick="plusDivs(-1)">&#10094;</button>
-			<button class="but-right" onclick="plusDivs(+1)">&#10095;</button>
-			<script src="/public/js/home.js"></script>
-		</div>
-		<div id="menuIcon">
-			<div class="iconMen">
-				<img src="/public/media/icon/games.png">
-				<p>Games</p>
-			</div>
-			<div class="iconMen">
-				<img src="/public/media/icon/pulsa.png">
-				<p>Pulsa</p>
-			</div>
-			<div class="iconMen">
-				<img src="/public/media/icon/listrik.png">
-				<p>Listrik</p>
-			</div>
-		</div>
-		<div id="toko">
-			<h1>Toko Tersedia</h1>
-			<div id="tokoContainer">
-				<div class="tokoContent" href="github.com">
-					<div class="fotoToko"></div>
-					<h3>Toko Emil</h3>
-					<p>Jl, Blablabla, Labuhan Ratu, Kedaton</p>
-				</div>
-				<div class="tokoContent">
-					<div class="fotoToko"></div>
-					<h3>Indogrosir</h3>
-					<p>Jl. Bypass, Bandar Lammpung</p>
-				</div>
-				<div class="tokoContent">
-					<div class="fotoToko"></div>
-					<h3>???</h3>
-					<p>Jl. Belum ada, tanda tanya</p>
-				</div>
-			</div>
-		</div>
-	</body>
+      <button class="but-left" onclick="plusDivs(-1)">&#10094;</button>
+      <button class="but-right" onclick="plusDivs(+1)">&#10095;</button>
+      <script src="/public/js/home.js"></script>
+    </div>
+    <div id="menuIcon">
+      <div class="iconMen">
+        <img src="/public/media/icon/games.png" />
+        <p>Games</p>
+      </div>
+      <div class="iconMen">
+        <img src="/public/media/icon/pulsa.png" />
+        <p>Pulsa</p>
+      </div>
+      <div class="iconMen">
+        <img src="/public/media/icon/listrik.png" />
+        <p>Listrik</p>
+      </div>
+    </div>
+    <div id="toko">
+      <h1>Toko Tersedia</h1>
+      <div id="tokoContainer">
+        <a class="tokoContent" href="/tokoemil">
+          <div class="fotoToko"></div>
+          <h3>Toko Emil</h3>
+          <p>Jl, Blablabla, Labuhan Ratu, Kedaton</p>
+        </a>
+        <div class="tokoContent">
+          <div class="fotoToko"></div>
+          <h3>Indogrosir</h3>
+          <p>Jl. Bypass, Bandar Lammpung</p>
+        </div>
+        <div class="tokoContent">
+          <div class="fotoToko"></div>
+          <h3>???</h3>
+          <p>Jl. Belum ada, tanda tanya</p>
+        </div>
+      </div>
+    </div>
+    <div id="footerss">{{template "_footer"}}</div>
+  </body>
 </html>
+
+{{end}}

@@ -1,15 +1,17 @@
 package main
 
 import (
-    "fmt"
-    "html/template"
-    "net/http"
-    "os"
+	"fmt"
+	"html/template"
+	"net/http"
+	"os"
 )
 
 type justFilesFilesystem struct {
     fs http.FileSystem
 }
+
+type M map[string]interface{}
 
 func (fs justFilesFilesystem) Open(name string) (http.File, error) {
     f, err := fs.fs.Open(name)
@@ -44,8 +46,15 @@ func hello(w http.ResponseWriter, req *http.Request) {
 }
 
 func home(w http.ResponseWriter, req *http.Request){
-    t := template.Must(template.ParseFiles("views/homepage.html"))
-    t.Execute(w, nil)
+    data := M{"nama" : "Superman"}
+    t := template.Must(template.ParseFiles(
+        "views/homepage.html",
+        "views/footer.html",
+        "views/headers.html"))
+    err := t.ExecuteTemplate(w, "homepage", data)
+    if err != nil {
+        http.Error(w, err.Error(), http.StatusInternalServerError)
+    }
 }
 
 func headers(w http.ResponseWriter, req *http.Request) {
@@ -58,8 +67,32 @@ func headers(w http.ResponseWriter, req *http.Request) {
 }
 
 func toko(w http.ResponseWriter, req *http.Request){
-    t:= template.Must(template.ParseFiles("views/toko.html"))
-    t.Execute(w, nil)
+    data := M{"nama" : "Toko Emil",
+                "alamat" : "Jl. Harapan Bangsa, Labuhan Ratu",
+                "spesifikasi" : "terpercaya | Bisa menggandakan uang | Laris manis"}
+    t:= template.Must(template.ParseFiles(
+        "views/toko.html",
+        "views/footer.html",
+        "views/headers.html"))
+    t.ExecuteTemplate(w, "toko", data)
+}
+
+func tokoemil(w http.ResponseWriter, req *http.Request){
+    data := M{"nama" : "Toko Emil",
+                "alamat" : "Jl. Harapan Bangsa, Labuhan Ratu",
+                "spesifikasi" : "terpercaya | Bisa menggandakan uang | Laris manis"}
+    t:= template.Must(template.ParseFiles(
+        "views/toko.html",
+        "views/footer.html",
+        "views/headers.html"))
+    t.ExecuteTemplate(w, "toko", data)
+}
+
+func admin(w http.ResponseWriter, req *http.Request){
+    t := template.Must(template.ParseFiles(
+        "views/admin.html",
+        "views/headers.html"))
+    t.ExecuteTemplate(w, "admin", nil)
 }
 
 func main() {
@@ -69,6 +102,8 @@ func main() {
     http.HandleFunc("/", home)
     http.HandleFunc("/headers", headers)
     http.HandleFunc("/toko", toko)
+    http.HandleFunc("/admin", admin)
+    http.HandleFunc("/tokoemil", tokoemil)
 
     //http.Handle("/static/", 
         //http.StripPrefix("/static/", 

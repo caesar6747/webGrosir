@@ -1,33 +1,65 @@
+{{define "toko"}}
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8">
-		<title>Grosir</title>
-		<link rel="stylesheet" type="text/css" href="/public/css/headers.css">
-		<link rel="stylesheet" type="text/css" href="/public/css/toko.css">
-	</head>
-	<body>
-		<div class="headers"></div>
-		<div id="tokCon">
-			<div class="barang">
-				<img src="/public/media/images/jajan.jpg">
-				<h3>Rp. 100.000</h3>
-			</div>
-			<div class="barang">
-				<img src="/public/media/images/jajan.jpg">
-				<h3>Rp. 100.000</h3>
-			</div>
-			<div class="barang">
-				<img src="/public/media/images/jajan.jpg">
-				<h3>Rp. 100.000</h3>
-			</div>
-		</div>
-		<br><br>
-		<div id="tokCon">
-			<div class="barang"></div>
-			<div class="barang"></div>
-			<div class="barang"></div>
-		</div>
-	</body>
+  <head>
+    <meta charset="utf-8" />
+    <title>Grosir</title>
+    <link rel="stylesheet" type="text/css" href="/public/css/headers.css" />
+    <link rel="stylesheet" type="text/css" href="/public/css/toko.css" />
+  </head>
+  <body>
+    {{template "_header"}}
+    <div id="profile">
+      <div id="banner"></div>
+      <div id="info">
+        <div id="profileicon"></div>
+        <h3 id="namatoko">{{.nama}}</h3>
+        <h5 id="alamattoko">{{.alamat}}</h5>
+        <h5 id="spek">{{.spesifikasi}}</h5>
+        <a id="chat" href="#">
+          <p id="pes">Chat</p>
+          <div id="titik"></div>
+        </a>
+        <a id="foll" href="#"><p id="pess">Ikuti</p></a>
+      </div>
+    </div>
+    <div id="tokCon">
+      <div class="barang">
+        <img src="/public/media/images/jajan.jpg" />
+        <h3>Rp. 100.000</h3>
+      </div>
+      <div class="barang">
+        <img src="/public/media/images/jajan.jpg" />
+        <h3>Rp. 100.000</h3>
+      </div>
+      <div class="barang">
+        <img src="/public/media/images/jajan.jpg" />
+        <h3>Rp. 100.000</h3>
+      </div>
+    </div>
+    <br /><br />
+    <div id="tokCon">
+      <div class="barang"></div>
+      <div class="barang"></div>
+      <div class="barang"></div>
+    </div>
+    <br /><br />
+    <div id="tokCon">
+      <div class="barang">
+        <img src="/public/media/images/jajan.jpg" />
+        <h3>Rp. 100.000</h3>
+      </div>
+      <div class="barang">
+        <img src="/public/media/images/jajan.jpg" />
+        <h3>Rp. 100.000</h3>
+      </div>
+      <div class="barang">
+        <img src="/public/media/images/jajan.jpg" />
+        <h3>Rp. 100.000</h3>
+      </div>
+    </div>
 
+    <div id="footer">{{template "_footer"}}</div>
+  </body>
 </html>
+{{end}}
