@@ -9,10 +9,9 @@
   <body>
     {{template "_header"}}
     <div class="slide">
-      <img class="mySlides" src="/public/media/images/images1.jpg" />
-      <img class="mySlides" src="/public/media/images/images2.jpg" />
-      <img class="mySlides" src="/public/media/images/images3.jpg" />
-      <img class="mySlides" src="web.jpg" />
+      <img class="mySlides" src="/public/media/images/banner.png" />
+      <img class="mySlides" src="/public/media/images/banner2.jpg" />
+      <img class="mySlides" src="/public/media/images/bannerc.png" />
 
       <button class="but-left" onclick="plusDivs(-1)">&#10094;</button>
       <button class="but-right" onclick="plusDivs(+1)">&#10095;</button>
@@ -36,19 +35,29 @@
       <h1>Toko Tersedia</h1>
       <div id="tokoContainer">
         <a class="tokoContent" href="/tokoemil">
-          <div class="fotoToko"></div>
+          <div class="fotoToko">
+            <img src="/public/media/Toko Emil/tokoemil.png" />
+          </div>
           <h3>Toko Emil</h3>
-          <p>Jl, Blablabla, Labuhan Ratu, Kedaton</p>
+          <p>Jl. Untung Suropati, Labuhan Ratu, Kedaton</p>
+          <br />
+          <p>Merakyat | Bayar Mudah | Tanpa Ribet</p>
+        </a>
+        <a class="tokoContent" href="/indogros">
+          <div class="fotoToko">
+            <img src="/public/media/Indogros/indo.jpg" />
+          </div>
+          <h3>Indogrosir</h3>
+          <p>Jl. Lintas Sumatra, Kedaton, Bandar Lammpung</p>
+          <br />
+          <p>Terpercaya | Harga bersahabat | Untung Lebih Banyak</p>
         </a>
         <div class="tokoContent">
-          <div class="fotoToko"></div>
-          <h3>Indogrosir</h3>
-          <p>Jl. Bypass, Bandar Lammpung</p>
-        </div>
-        <div class="tokoContent">
-          <div class="fotoToko"></div>
-          <h3>???</h3>
-          <p>Jl. Belum ada, tanda tanya</p>
+          <div class="fotoToko">
+            <img src="/public/media/kosong/kosong.jpg" />
+          </div>
+          <h3>Segera Hadir</h3>
+          <p>...</p>
         </div>
       </div>
     </div>

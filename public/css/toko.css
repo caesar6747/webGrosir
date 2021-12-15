@@ -17,6 +17,10 @@ body {
   background-color: blueviolet;
 }
 
+#banner img {
+  width: 100%;
+}
+
 #profile #info {
   position: relative;
   width: auto;
@@ -32,6 +36,11 @@ body {
   left: 25px;
   background-color: chartreuse;
   border-radius: 100%;
+  overflow: hidden;
+}
+#profileicon img {
+  width: 100%;
+  height: auto;
 }
 
 #namatoko {
@@ -129,20 +138,27 @@ body {
   background-color: #f4f4f4;
   grid-row-start: 1;
   grid-row-end: 3;
+  overflow: hidden;
 }
 
 .barang img {
   position: relative;
-  width: 15vw;
+  width: auto;
   height: 15vw;
 }
 
 .barang img:hover {
   opacity: 50%;
 }
-
-.barang h3 {
+.barang p {
   position: relative;
+  left: 20px;
+  font-family: "Calibri";
+}
+
+.barang h4 {
+  position: relative;
+  font-family: "Calibri";
   left: 20px;
 }
 

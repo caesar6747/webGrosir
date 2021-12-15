@@ -79,8 +79,22 @@ func toko(w http.ResponseWriter, req *http.Request){
 
 func tokoemil(w http.ResponseWriter, req *http.Request){
     data := M{"nama" : "Toko Emil",
-                "alamat" : "Jl. Harapan Bangsa, Labuhan Ratu",
-                "spesifikasi" : "terpercaya | Bisa menggandakan uang | Laris manis"}
+                "alamat" : "Jl. Untung Suropati, Labuhan Ratu",
+                "spesifikasi" : "terpercaya | Bisa menggandakan uang | Laris manis",
+                "banner" : "/public/media/Toko Emil/banneremil.png"}
+    t:= template.Must(template.ParseFiles(
+        "views/toko.html",
+        "views/footer.html",
+        "views/headers.html"))
+    t.ExecuteTemplate(w, "toko", data)
+}
+
+func indogros(w http.ResponseWriter, req *http.Request){
+    data := M{"nama" : "IndoGrosir",
+                "alamat" : "Jl. Lintas Sumatra, Lampung",
+                "spesifikasi" : "terpercaya | Bisa menggandakan uang | Laris manis",
+                "banner" : "/public/media/Indogros/bannerindo.png",
+                "logo" : "/public/media/Indogros/logoindo.png"}
     t:= template.Must(template.ParseFiles(
         "views/toko.html",
         "views/footer.html",
@@ -104,6 +118,7 @@ func main() {
     http.HandleFunc("/toko", toko)
     http.HandleFunc("/admin", admin)
     http.HandleFunc("/tokoemil", tokoemil)
+    http.HandleFunc("/indogros", indogros)
 
     //http.Handle("/static/", 
         //http.StripPrefix("/static/", 
